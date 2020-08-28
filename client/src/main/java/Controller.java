@@ -92,6 +92,12 @@ public class Controller implements Initializable {
                 e.printStackTrace();
             }
         }
+        try {
+            Thread.sleep(2000);
+            text.clear();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void initialize(URL location, ResourceBundle resources) {
