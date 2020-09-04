@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
-    <AnchorPane prefHeight="533.0" prefWidth="376.0">
-        <ListView fx:id="listView" layoutX="14.0" layoutY="15.0" prefHeight="468.0" prefWidth="348.0" />
-        <TextField fx:id="text" layoutX="14.0" layoutY="483.0" prefHeight="38.0" prefWidth="294.0" promptText="Введите текст" />
-        <Button fx:id="send" onAction="#sendMessage" layoutX="308.0" layoutY="483.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="54.0" text="SEND" />
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <children>
+         <SplitPane dividerPositions="0.5" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <items>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <HBox layoutX="211.0" layoutY="363.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="363.0">
+                        <children>
+                           <Button onAction="#uploadFile" mnemonicParsing="false" text="Upload" textAlignment="CENTER">
+                              <font>
+                                 <Font name="Ubuntu Bold Italic" size="16.0" />
+                              </font>
+                           </Button>
+                        </children>
+                     </HBox>
+                     <TreeView fx:id="foldersTreeView" prefHeight="358.0" prefWidth="295.0" />
+                  </children>
+               </AnchorPane>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <HBox layoutX="191.0" layoutY="358.0" prefHeight="30.0" prefWidth="96.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="363.0">
+                        <children>
+                           <Button onAction="#downloadFile" mnemonicParsing="false" text="Download">
+                              <font>
+                                 <Font name="Ubuntu Bold Italic" size="15.0" />
+                              </font>
+                           </Button>
+                        </children>
+                     </HBox>
+                     <TreeView fx:id="serverFoldersTreeView" prefHeight="358.0" prefWidth="295.0" />
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+      </children>
     </AnchorPane>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>
